@@ -58,30 +58,30 @@ class ViewController: UIViewController {
     }
         
     func searchDishesRequest() {
-        searchDishesResult = Array(repeating:
-                                    DishSearch(id: count,
-                                               image: "https://spoonacular.com/recipeImages/376941-312x231.jpeg",
-                                               title: "Pasta Rosa"),count: count)
-        count+=1
-        self.searchDishTable.reloadData()
+//        searchDishesResult = Array(repeating:
+//                                    DishSearch(id: count,
+//                                               image: "https://spoonacular.com/recipeImages/376941-312x231.jpeg",
+//                                               title: "Pasta Rosa"),count: count)
+//        count+=1
+ //       self.searchDishTable.reloadData()
             
-//            networkService!.perform(.get, .search,
-//                                   RecipeSearch([URLQueryItem(name: "query",
-//                                                              value: searchText)])) { result in
-//                switch result {
-//                case .data(let data):
-//                    print("RESULT")
-//                  guard let data = data,
-//                        let searchDishesResult = try? JSONDecoder().decode(SearchResponce.self, from: data) else { return }
-//                  DispatchQueue.main.async {
-//                    self.searchDishesResult = searchDishesResult.results
-//                    self.searchDishTable.reloadData()
-//                  }
-//                case .error(_):
-//                    print("ERROR")
-//                    break
-//                }
-//            }
+            networkService!.perform(.get, .search,
+                                   RecipeSearch([URLQueryItem(name: "query",
+                                                              value: searchText)])) { result in
+                switch result {
+                case .data(let data):
+                    print("RESULT")
+                  guard let data = data,
+                        let searchDishesResult = try? JSONDecoder().decode(SearchResponce.self, from: data) else { return }
+                  DispatchQueue.main.async {
+                    self.searchDishesResult = searchDishesResult.results
+                    self.searchDishTable.reloadData()
+                  }
+                case .error(_):
+                    print("ERROR")
+                    break
+                }
+            }
         
     }
 
