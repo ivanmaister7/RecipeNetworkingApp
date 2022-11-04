@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct DishSearch {
-    var imageUrl: String
-    var dishName: String
+struct DishSearch: Codable {
+    let id: Int
+    let image: String
+    let title: String
 }

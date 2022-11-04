@@ -14,9 +14,9 @@ class SearchCell: UITableViewCell {
     @IBOutlet weak var dishNameLabel: UILabel!
     
     func confView(for dish: DishSearch ) {
-        //self.dishImage.sd_setImage(with: URL(string: dish.imageUrl), completed: nil)
-        self.dishImage.image = UIImage(named: "default")
-        self.dishNameLabel.text = dish.dishName
+        self.dishImage.sd_setImage(with: URL(string: dish.image), completed: nil)
+        //self.dishImage.image = UIImage(named: "default")
+        self.dishNameLabel.text = dish.title
     }
 }
 

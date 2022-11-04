@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF73C2C329152BFD00F0B7A1 /* AlamoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73C2C229152BFD00F0B7A1 /* AlamoNetworking.swift */; };
+		AF73C2C529152C3400F0B7A1 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73C2C429152C3400F0B7A1 /* Networking.swift */; };
+		AF73C2C729152C6700F0B7A1 /* SearchResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73C2C629152C6700F0B7A1 /* SearchResponce.swift */; };
+		AF73C2C92915301100F0B7A1 /* DishDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73C2C82915301100F0B7A1 /* DishDetailsViewController.swift */; };
 		AF7B797329140584006A4F55 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B797229140584006A4F55 /* SearchCell.swift */; };
 		AF7B79752914093F006A4F55 /* DishSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B79742914093F006A4F55 /* DishSearch.swift */; };
-		AF9BCAC32913CA7500C3F265 /* AlamoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9BCAC02913CA7500C3F265 /* AlamoNetworking.swift */; };
-		AF9BCAC42913CA7500C3F265 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9BCAC12913CA7500C3F265 /* Networking.swift */; };
 		AFE910FA2913B0F0007EDE81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910F92913B0F0007EDE81 /* AppDelegate.swift */; };
 		AFE910FC2913B0F0007EDE81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */; };
 		AFE910FE2913B0F0007EDE81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910FD2913B0F0007EDE81 /* ViewController.swift */; };
@@ -22,10 +24,12 @@
 
 /* Begin PBXFileReference section */
 		AA71F76905D77A119B0BA029 /* Pods-RecipeNetworkingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeNetworkingApp.release.xcconfig"; path = "Target Support Files/Pods-RecipeNetworkingApp/Pods-RecipeNetworkingApp.release.xcconfig"; sourceTree = "<group>"; };
+		AF73C2C229152BFD00F0B7A1 /* AlamoNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoNetworking.swift; sourceTree = "<group>"; };
+		AF73C2C429152C3400F0B7A1 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AF73C2C629152C6700F0B7A1 /* SearchResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponce.swift; sourceTree = "<group>"; };
+		AF73C2C82915301100F0B7A1 /* DishDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailsViewController.swift; sourceTree = "<group>"; };
 		AF7B797229140584006A4F55 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		AF7B79742914093F006A4F55 /* DishSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishSearch.swift; sourceTree = "<group>"; };
-		AF9BCAC02913CA7500C3F265 /* AlamoNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamoNetworking.swift; path = ../../../../Downloads/Networking/L3_NetworkingExample/AlamoNetworking.swift; sourceTree = "<group>"; };
-		AF9BCAC12913CA7500C3F265 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Networking.swift; path = ../../../../Downloads/Networking/L3_NetworkingExample/Networking.swift; sourceTree = "<group>"; };
 		AFE910F62913B0F0007EDE81 /* RecipeNetworkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeNetworkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE910F92913B0F0007EDE81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AF73C2BD29152B5300F0B7A1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AF73C2C229152BFD00F0B7A1 /* AlamoNetworking.swift */,
+				AF73C2C429152C3400F0B7A1 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AF73C2C029152B6400F0B7A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF7B79742914093F006A4F55 /* DishSearch.swift */,
+				AF73C2C629152C6700F0B7A1 /* SearchResponce.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AFE910ED2913B0F0007EDE81 = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +101,8 @@
 		AFE910F82913B0F0007EDE81 /* RecipeNetworkingApp */ = {
 			isa = PBXGroup;
 			children = (
-				AF9BCAC02913CA7500C3F265 /* AlamoNetworking.swift */,
-				AF9BCAC12913CA7500C3F265 /* Networking.swift */,
+				AF73C2C029152B6400F0B7A1 /* Model */,
+				AF73C2BD29152B5300F0B7A1 /* Networking */,
 				AFE910F92913B0F0007EDE81 /* AppDelegate.swift */,
 				AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */,
 				AFE910FD2913B0F0007EDE81 /* ViewController.swift */,
@@ -89,7 +111,7 @@
 				AFE911042913B0F4007EDE81 /* LaunchScreen.storyboard */,
 				AFE911072913B0F4007EDE81 /* Info.plist */,
 				AF7B797229140584006A4F55 /* SearchCell.swift */,
-				AF7B79742914093F006A4F55 /* DishSearch.swift */,
+				AF73C2C82915301100F0B7A1 /* DishDetailsViewController.swift */,
 			);
 			path = RecipeNetworkingApp;
 			sourceTree = "<group>";
@@ -218,12 +240,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE910FE2913B0F0007EDE81 /* ViewController.swift in Sources */,
+				AF73C2C92915301100F0B7A1 /* DishDetailsViewController.swift in Sources */,
 				AF7B797329140584006A4F55 /* SearchCell.swift in Sources */,
 				AF7B79752914093F006A4F55 /* DishSearch.swift in Sources */,
-				AF9BCAC42913CA7500C3F265 /* Networking.swift in Sources */,
 				AFE910FA2913B0F0007EDE81 /* AppDelegate.swift in Sources */,
-				AF9BCAC32913CA7500C3F265 /* AlamoNetworking.swift in Sources */,
+				AF73C2C729152C6700F0B7A1 /* SearchResponce.swift in Sources */,
+				AF73C2C329152BFD00F0B7A1 /* AlamoNetworking.swift in Sources */,
 				AFE910FC2913B0F0007EDE81 /* SceneDelegate.swift in Sources */,
+				AF73C2C529152C3400F0B7A1 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

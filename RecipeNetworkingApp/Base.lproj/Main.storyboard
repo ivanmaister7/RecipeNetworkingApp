@@ -26,6 +26,9 @@
                                 <state key="normal" image="magnifyingglass" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wc1-PZ-Bf4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-He-8TT">
                                 <rect key="frame" x="16" y="111" width="382" height="48"/>
@@ -34,26 +37,29 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Guess Nutrition"/>
+                                <connections>
+                                    <action selector="guessButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9eu-6h-7lU"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9xX-lf-wqt">
                                 <rect key="frame" x="0.0" y="183" width="414" height="679"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_id" rowHeight="317" id="KUw-Ma-P42" userLabel="cell_id" customClass="SearchCell" customModule="RecipeNetworkingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="317"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_id" rowHeight="515" id="KUw-Ma-P42" userLabel="cell_id" customClass="SearchCell" customModule="RecipeNetworkingApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="515"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KUw-Ma-P42" id="VED-Hq-wXo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="317"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="515"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdO-wj-Ww8">
-                                                    <rect key="frame" x="163.5" y="19" width="87.5" height="21"/>
+                                                    <rect key="frame" x="163.5" y="19" width="87.5" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6C-Sx-Ijc">
-                                                    <rect key="frame" x="20" y="72" width="374" height="234"/>
+                                                    <rect key="frame" x="20" y="90" width="374" height="414"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -63,6 +69,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="r6C-Sx-Ijc" secondAttribute="trailing" id="bZG-Kc-pYx"/>
                                                 <constraint firstItem="AdO-wj-Ww8" firstAttribute="centerX" secondItem="VED-Hq-wXo" secondAttribute="centerX" id="hEW-Bs-aH9"/>
                                                 <constraint firstItem="r6C-Sx-Ijc" firstAttribute="top" secondItem="AdO-wj-Ww8" secondAttribute="bottom" constant="32" id="ian-Ik-2lY"/>
+                                                <constraint firstItem="r6C-Sx-Ijc" firstAttribute="height" secondItem="VED-Hq-wXo" secondAttribute="width" id="lMe-B3-rMI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -93,6 +100,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchDishBar" destination="amq-vp-FUA" id="G3f-5h-gQ5"/>
                         <outlet property="searchDishTable" destination="9xX-lf-wqt" id="np5-jK-wgt"/>
                     </connections>
                 </viewController>
