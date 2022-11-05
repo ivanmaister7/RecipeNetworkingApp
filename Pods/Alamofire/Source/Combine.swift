@@ -32,11 +32,11 @@ import Foundation
 
 /// A Combine `Publisher` that publishes the `DataResponse<Value, AFError>` of the provided `DataRequest`.
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-public struct DataResponsePublisher<Value>: Publisher {
-    public typealias Output = DataResponse<Value, AFError>
+public struct DataResponsePublisher<NutritionValue>: Publisher {
+    public typealias Output = DataResponse<NutritionValue, AFError>
     public typealias Failure = Never
 
-    private typealias Handler = (@escaping (_ response: DataResponse<Value, AFError>) -> Void) -> DataRequest
+    private typealias Handler = (@escaping (_ response: DataResponse<NutritionValue, AFError>) -> Void) -> DataRequest
 
     private let request: DataRequest
     private let responseHandler: Handler
@@ -48,7 +48,7 @@ public struct DataResponsePublisher<Value>: Publisher {
     ///   - queue:      `DispatchQueue` on which the `DataResponse` value will be published. `.main` by default.
     ///   - serializer: `ResponseSerializer` used to produce the published `DataResponse`.
     public init<Serializer: ResponseSerializer>(_ request: DataRequest, queue: DispatchQueue, serializer: Serializer)
-        where Value == Serializer.SerializedObject {
+        where NutritionValue == Serializer.SerializedObject {
         self.request = request
         responseHandler = { request.response(queue: queue, responseSerializer: serializer, completionHandler: $0) }
     }
@@ -62,7 +62,7 @@ public struct DataResponsePublisher<Value>: Publisher {
     public init<Serializer: DataResponseSerializerProtocol>(_ request: DataRequest,
                                                             queue: DispatchQueue,
                                                             serializer: Serializer)
-        where Value == Serializer.SerializedObject {
+        where NutritionValue == Serializer.SerializedObject {
         self.request = request
         responseHandler = { request.response(queue: queue, responseSerializer: serializer, completionHandler: $0) }
     }
@@ -70,14 +70,14 @@ public struct DataResponsePublisher<Value>: Publisher {
     /// Publishes only the `Result` of the `DataResponse` value.
     ///
     /// - Returns: The `AnyPublisher` publishing the `Result<Value, AFError>` value.
-    public func result() -> AnyPublisher<Result<Value, AFError>, Never> {
+    public func result() -> AnyPublisher<Result<NutritionValue, AFError>, Never> {
         map(\.result).eraseToAnyPublisher()
     }
 
     /// Publishes the `Result` of the `DataResponse` as a single `Value` or fail with the `AFError` instance.
     ///
     /// - Returns: The `AnyPublisher<Value, AFError>` publishing the stream.
-    public func value() -> AnyPublisher<Value, AFError> {
+    public func value() -> AnyPublisher<NutritionValue, AFError> {
         setFailureType(to: AFError.self).flatMap(\.result.publisher).eraseToAnyPublisher()
     }
 
@@ -122,7 +122,7 @@ public struct DataResponsePublisher<Value>: Publisher {
 }
 
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-extension DataResponsePublisher where Value == Data? {
+extension DataResponsePublisher where NutritionValue == Data? {
     /// Creates an instance which publishes a `DataResponse<Data?, AFError>` value without serialization.
     @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
     public init(_ request: DataRequest, queue: DispatchQueue) {
@@ -256,11 +256,11 @@ extension DataRequest {
 
 // A Combine `Publisher` that publishes a sequence of `Stream<Value, AFError>` values received by the provided `DataStreamRequest`.
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-public struct DataStreamPublisher<Value>: Publisher {
-    public typealias Output = DataStreamRequest.Stream<Value, AFError>
+public struct DataStreamPublisher<NutritionValue>: Publisher {
+    public typealias Output = DataStreamRequest.Stream<NutritionValue, AFError>
     public typealias Failure = Never
 
-    private typealias Handler = (@escaping DataStreamRequest.Handler<Value, AFError>) -> DataStreamRequest
+    private typealias Handler = (@escaping DataStreamRequest.Handler<NutritionValue, AFError>) -> DataStreamRequest
 
     private let request: DataStreamRequest
     private let streamHandler: Handler
@@ -273,7 +273,7 @@ public struct DataStreamPublisher<Value>: Publisher {
     ///                 default.
     ///   - serializer: `DataStreamSerializer` used to produce the published `Stream<Value, AFError>` values.
     public init<Serializer: DataStreamSerializer>(_ request: DataStreamRequest, queue: DispatchQueue, serializer: Serializer)
-        where Value == Serializer.SerializedObject {
+        where NutritionValue == Serializer.SerializedObject {
         self.request = request
         streamHandler = { request.responseStream(using: serializer, on: queue, stream: $0) }
     }
@@ -281,7 +281,7 @@ public struct DataStreamPublisher<Value>: Publisher {
     /// Publishes only the `Result` of the `DataStreamRequest.Stream`'s `Event`s.
     ///
     /// - Returns: The `AnyPublisher` publishing the `Result<Value, AFError>` value.
-    public func result() -> AnyPublisher<Result<Value, AFError>, Never> {
+    public func result() -> AnyPublisher<Result<NutritionValue, AFError>, Never> {
         compactMap { stream in
             switch stream.event {
             case let .stream(result):
@@ -298,7 +298,7 @@ public struct DataStreamPublisher<Value>: Publisher {
     /// `AFError` instance.
     ///
     /// - Returns: The `AnyPublisher<Value, AFError>` publishing the stream.
-    public func value() -> AnyPublisher<Value, AFError> {
+    public func value() -> AnyPublisher<NutritionValue, AFError> {
         result().setFailureType(to: AFError.self).flatMap(\.publisher).eraseToAnyPublisher()
     }
 
@@ -402,11 +402,11 @@ extension DataStreamRequest {
 
 /// A Combine `Publisher` that publishes the `DownloadResponse<Value, AFError>` of the provided `DownloadRequest`.
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-public struct DownloadResponsePublisher<Value>: Publisher {
-    public typealias Output = DownloadResponse<Value, AFError>
+public struct DownloadResponsePublisher<NutritionValue>: Publisher {
+    public typealias Output = DownloadResponse<NutritionValue, AFError>
     public typealias Failure = Never
 
-    private typealias Handler = (@escaping (_ response: DownloadResponse<Value, AFError>) -> Void) -> DownloadRequest
+    private typealias Handler = (@escaping (_ response: DownloadResponse<NutritionValue, AFError>) -> Void) -> DownloadRequest
 
     private let request: DownloadRequest
     private let responseHandler: Handler
@@ -418,7 +418,7 @@ public struct DownloadResponsePublisher<Value>: Publisher {
     ///   - queue:      `DispatchQueue` on which the `DownloadResponse` value will be published. `.main` by default.
     ///   - serializer: `ResponseSerializer` used to produce the published `DownloadResponse`.
     public init<Serializer: ResponseSerializer>(_ request: DownloadRequest, queue: DispatchQueue, serializer: Serializer)
-        where Value == Serializer.SerializedObject {
+        where NutritionValue == Serializer.SerializedObject {
         self.request = request
         responseHandler = { request.response(queue: queue, responseSerializer: serializer, completionHandler: $0) }
     }
@@ -433,7 +433,7 @@ public struct DownloadResponsePublisher<Value>: Publisher {
     public init<Serializer: DownloadResponseSerializerProtocol>(_ request: DownloadRequest,
                                                                 queue: DispatchQueue,
                                                                 serializer: Serializer)
-        where Value == Serializer.SerializedObject {
+        where NutritionValue == Serializer.SerializedObject {
         self.request = request
         responseHandler = { request.response(queue: queue, responseSerializer: serializer, completionHandler: $0) }
     }
@@ -441,14 +441,14 @@ public struct DownloadResponsePublisher<Value>: Publisher {
     /// Publishes only the `Result` of the `DownloadResponse` value.
     ///
     /// - Returns: The `AnyPublisher` publishing the `Result<Value, AFError>` value.
-    public func result() -> AnyPublisher<Result<Value, AFError>, Never> {
+    public func result() -> AnyPublisher<Result<NutritionValue, AFError>, Never> {
         map(\.result).eraseToAnyPublisher()
     }
 
     /// Publishes the `Result` of the `DownloadResponse` as a single `Value` or fail with the `AFError` instance.
     ///
     /// - Returns: The `AnyPublisher<Value, AFError>` publishing the stream.
-    public func value() -> AnyPublisher<Value, AFError> {
+    public func value() -> AnyPublisher<NutritionValue, AFError> {
         setFailureType(to: AFError.self).flatMap(\.result.publisher).eraseToAnyPublisher()
     }
 
@@ -631,7 +631,7 @@ extension DownloadRequest {
 }
 
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-extension DownloadResponsePublisher where Value == URL? {
+extension DownloadResponsePublisher where NutritionValue == URL? {
     /// Creates an instance which publishes a `DownloadResponse<URL?, AFError>` value without serialization.
     @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
     public init(_ request: DownloadRequest, queue: DispatchQueue) {

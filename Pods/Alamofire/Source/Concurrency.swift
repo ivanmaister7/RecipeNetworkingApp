@@ -112,9 +112,9 @@ extension Request {
 
 /// Value used to `await` a `DataResponse` and associated values.
 @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
-public struct DataTask<Value> {
+public struct DataTask<NutritionValue> {
     /// `DataResponse` produced by the `DataRequest` and its response handler.
-    public var response: DataResponse<Value, AFError> {
+    public var response: DataResponse<NutritionValue, AFError> {
         get async {
             if shouldAutomaticallyCancel {
                 return await withTaskCancellationHandler {
@@ -129,22 +129,22 @@ public struct DataTask<Value> {
     }
 
     /// `Result` of any response serialization performed for the `response`.
-    public var result: Result<Value, AFError> {
+    public var result: Result<NutritionValue, AFError> {
         get async { await response.result }
     }
 
     /// `Value` returned by the `response`.
-    public var value: Value {
+    public var value: NutritionValue {
         get async throws {
             try await result.get()
         }
     }
 
     private let request: DataRequest
-    private let task: Task<DataResponse<Value, AFError>, Never>
+    private let task: Task<DataResponse<NutritionValue, AFError>, Never>
     private let shouldAutomaticallyCancel: Bool
 
-    fileprivate init(request: DataRequest, task: Task<DataResponse<Value, AFError>, Never>, shouldAutomaticallyCancel: Bool) {
+    fileprivate init(request: DataRequest, task: Task<DataResponse<NutritionValue, AFError>, Never>, shouldAutomaticallyCancel: Bool) {
         self.request = request
         self.task = task
         self.shouldAutomaticallyCancel = shouldAutomaticallyCancel
@@ -203,13 +203,13 @@ extension DataRequest {
     ///   - emptyRequestMethods:       `HTTPMethod`s for which empty responses are always valid. `[.head]` by default.
     ///
     /// - Returns: The `DataTask`.
-    public func serializingDecodable<Value: Decodable>(_ type: Value.Type = Value.self,
+    public func serializingDecodable<NutritionValue: Decodable>(_ type: NutritionValue.Type = NutritionValue.self,
                                                        automaticallyCancelling shouldAutomaticallyCancel: Bool = false,
-                                                       dataPreprocessor: DataPreprocessor = DecodableResponseSerializer<Value>.defaultDataPreprocessor,
+                                                       dataPreprocessor: DataPreprocessor = DecodableResponseSerializer<NutritionValue>.defaultDataPreprocessor,
                                                        decoder: DataDecoder = JSONDecoder(),
-                                                       emptyResponseCodes: Set<Int> = DecodableResponseSerializer<Value>.defaultEmptyResponseCodes,
-                                                       emptyRequestMethods: Set<HTTPMethod> = DecodableResponseSerializer<Value>.defaultEmptyRequestMethods) -> DataTask<Value> {
-        serializingResponse(using: DecodableResponseSerializer<Value>(dataPreprocessor: dataPreprocessor,
+                                                       emptyResponseCodes: Set<Int> = DecodableResponseSerializer<NutritionValue>.defaultEmptyResponseCodes,
+                                                       emptyRequestMethods: Set<HTTPMethod> = DecodableResponseSerializer<NutritionValue>.defaultEmptyRequestMethods) -> DataTask<NutritionValue> {
+        serializingResponse(using: DecodableResponseSerializer<NutritionValue>(dataPreprocessor: dataPreprocessor,
                                                                       decoder: decoder,
                                                                       emptyResponseCodes: emptyResponseCodes,
                                                                       emptyRequestMethods: emptyRequestMethods),
@@ -282,9 +282,9 @@ extension DataRequest {
         }
     }
 
-    private func dataTask<Value>(automaticallyCancelling shouldAutomaticallyCancel: Bool,
-                                 forResponse onResponse: @escaping (@escaping (DataResponse<Value, AFError>) -> Void) -> Void)
-        -> DataTask<Value> {
+    private func dataTask<NutritionValue>(automaticallyCancelling shouldAutomaticallyCancel: Bool,
+                                 forResponse onResponse: @escaping (@escaping (DataResponse<NutritionValue, AFError>) -> Void) -> Void)
+        -> DataTask<NutritionValue> {
         let task = Task {
             await withTaskCancellationHandler {
                 self.cancel()
@@ -297,7 +297,7 @@ extension DataRequest {
             }
         }
 
-        return DataTask<Value>(request: self, task: task, shouldAutomaticallyCancel: shouldAutomaticallyCancel)
+        return DataTask<NutritionValue>(request: self, task: task, shouldAutomaticallyCancel: shouldAutomaticallyCancel)
     }
 }
 
@@ -305,9 +305,9 @@ extension DataRequest {
 
 /// Value used to `await` a `DownloadResponse` and associated values.
 @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
-public struct DownloadTask<Value> {
+public struct DownloadTask<NutritionValue> {
     /// `DownloadResponse` produced by the `DownloadRequest` and its response handler.
-    public var response: DownloadResponse<Value, AFError> {
+    public var response: DownloadResponse<NutritionValue, AFError> {
         get async {
             if shouldAutomaticallyCancel {
                 return await withTaskCancellationHandler {
@@ -322,22 +322,22 @@ public struct DownloadTask<Value> {
     }
 
     /// `Result` of any response serialization performed for the `response`.
-    public var result: Result<Value, AFError> {
+    public var result: Result<NutritionValue, AFError> {
         get async { await response.result }
     }
 
     /// `Value` returned by the `response`.
-    public var value: Value {
+    public var value: NutritionValue {
         get async throws {
             try await result.get()
         }
     }
 
-    private let task: Task<AFDownloadResponse<Value>, Never>
+    private let task: Task<AFDownloadResponse<NutritionValue>, Never>
     private let request: DownloadRequest
     private let shouldAutomaticallyCancel: Bool
 
-    fileprivate init(request: DownloadRequest, task: Task<AFDownloadResponse<Value>, Never>, shouldAutomaticallyCancel: Bool) {
+    fileprivate init(request: DownloadRequest, task: Task<AFDownloadResponse<NutritionValue>, Never>, shouldAutomaticallyCancel: Bool) {
         self.request = request
         self.task = task
         self.shouldAutomaticallyCancel = shouldAutomaticallyCancel
@@ -398,13 +398,13 @@ extension DownloadRequest {
     ///   - emptyRequestMethods:       `HTTPMethod`s for which empty responses are always valid. `[.head]` by default.
     ///
     /// - Returns:                   The `DownloadTask`.
-    public func serializingDecodable<Value: Decodable>(_ type: Value.Type = Value.self,
+    public func serializingDecodable<NutritionValue: Decodable>(_ type: NutritionValue.Type = NutritionValue.self,
                                                        automaticallyCancelling shouldAutomaticallyCancel: Bool = false,
-                                                       dataPreprocessor: DataPreprocessor = DecodableResponseSerializer<Value>.defaultDataPreprocessor,
+                                                       dataPreprocessor: DataPreprocessor = DecodableResponseSerializer<NutritionValue>.defaultDataPreprocessor,
                                                        decoder: DataDecoder = JSONDecoder(),
-                                                       emptyResponseCodes: Set<Int> = DecodableResponseSerializer<Value>.defaultEmptyResponseCodes,
-                                                       emptyRequestMethods: Set<HTTPMethod> = DecodableResponseSerializer<Value>.defaultEmptyRequestMethods) -> DownloadTask<Value> {
-        serializingDownload(using: DecodableResponseSerializer<Value>(dataPreprocessor: dataPreprocessor,
+                                                       emptyResponseCodes: Set<Int> = DecodableResponseSerializer<NutritionValue>.defaultEmptyResponseCodes,
+                                                       emptyRequestMethods: Set<HTTPMethod> = DecodableResponseSerializer<NutritionValue>.defaultEmptyRequestMethods) -> DownloadTask<NutritionValue> {
+        serializingDownload(using: DecodableResponseSerializer<NutritionValue>(dataPreprocessor: dataPreprocessor,
                                                                       decoder: decoder,
                                                                       emptyResponseCodes: emptyResponseCodes,
                                                                       emptyRequestMethods: emptyRequestMethods),
@@ -491,9 +491,9 @@ extension DownloadRequest {
         }
     }
 
-    private func downloadTask<Value>(automaticallyCancelling shouldAutomaticallyCancel: Bool,
-                                     forResponse onResponse: @escaping (@escaping (DownloadResponse<Value, AFError>) -> Void) -> Void)
-        -> DownloadTask<Value> {
+    private func downloadTask<NutritionValue>(automaticallyCancelling shouldAutomaticallyCancel: Bool,
+                                     forResponse onResponse: @escaping (@escaping (DownloadResponse<NutritionValue, AFError>) -> Void) -> Void)
+        -> DownloadTask<NutritionValue> {
         let task = Task {
             await withTaskCancellationHandler {
                 self.cancel()
@@ -506,7 +506,7 @@ extension DownloadRequest {
             }
         }
 
-        return DownloadTask<Value>(request: self, task: task, shouldAutomaticallyCancel: shouldAutomaticallyCancel)
+        return DownloadTask<NutritionValue>(request: self, task: task, shouldAutomaticallyCancel: shouldAutomaticallyCancel)
     }
 }
 

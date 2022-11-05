@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lRS-l4-YFI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lRS-l4-YFI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="amq-vp-FUA">
-                                <rect key="frame" x="0.0" y="88" width="331" height="51"/>
+                                <rect key="frame" x="0.0" y="92" width="331" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-5J-FCv">
-                                <rect key="frame" x="331" y="88" width="83" height="51"/>
+                                <rect key="frame" x="331" y="92" width="83" height="56"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="magnifyingglass" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
@@ -30,23 +31,12 @@
                                     <action selector="searchButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wc1-PZ-Bf4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-He-8TT">
-                                <rect key="frame" x="16" y="155" width="382" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="66F-p1-kiS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Guess Nutrition"/>
-                                <connections>
-                                    <action selector="guessButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9eu-6h-7lU"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9xX-lf-wqt">
-                                <rect key="frame" x="0.0" y="227" width="414" height="635"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_id" rowHeight="515" id="KUw-Ma-P42" userLabel="cell_id" customClass="SearchCell" customModule="RecipeNetworkingApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="515"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="515"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KUw-Ma-P42" id="VED-Hq-wXo">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="515"/>
@@ -58,18 +48,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrT-4y-5xw">
+                                                    <rect key="frame" x="259" y="21.5" width="50" height="34"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="guessNutritionByDishName:" destination="KUw-Ma-P42" eventType="touchUpInside" id="Ntw-jo-tRm"/>
+                                                    </connections>
+                                                </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6C-Sx-Ijc">
                                                     <rect key="frame" x="20" y="90" width="374" height="414"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="yrT-4y-5xw" firstAttribute="centerY" secondItem="AdO-wj-Ww8" secondAttribute="centerY" id="9Qm-jz-cfm"/>
                                                 <constraint firstItem="r6C-Sx-Ijc" firstAttribute="leading" secondItem="VED-Hq-wXo" secondAttribute="leadingMargin" id="CoX-yc-jGl"/>
                                                 <constraint firstItem="AdO-wj-Ww8" firstAttribute="top" secondItem="VED-Hq-wXo" secondAttribute="topMargin" constant="8" id="L2r-iJ-GcT"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="r6C-Sx-Ijc" secondAttribute="bottom" id="S2s-5f-mSh"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yrT-4y-5xw" secondAttribute="trailing" constant="16" id="Vkp-03-hxt"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="r6C-Sx-Ijc" secondAttribute="trailing" id="bZG-Kc-pYx"/>
                                                 <constraint firstItem="AdO-wj-Ww8" firstAttribute="centerX" secondItem="VED-Hq-wXo" secondAttribute="centerX" id="hEW-Bs-aH9"/>
                                                 <constraint firstItem="r6C-Sx-Ijc" firstAttribute="top" secondItem="AdO-wj-Ww8" secondAttribute="bottom" constant="32" id="ian-Ik-2lY"/>
                                                 <constraint firstItem="r6C-Sx-Ijc" firstAttribute="height" secondItem="VED-Hq-wXo" secondAttribute="width" id="lMe-B3-rMI"/>
+                                                <constraint firstItem="yrT-4y-5xw" firstAttribute="leading" secondItem="AdO-wj-Ww8" secondAttribute="trailing" constant="8" id="sbj-5o-ahg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -87,11 +88,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rBa-5J-FCv" secondAttribute="trailing" id="3a5-uV-04g"/>
                             <constraint firstItem="amq-vp-FUA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="7I4-LK-opZ"/>
                             <constraint firstItem="amq-vp-FUA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7J3-gR-r8S"/>
+                            <constraint firstItem="9xX-lf-wqt" firstAttribute="top" secondItem="amq-vp-FUA" secondAttribute="bottom" id="7eg-ag-caM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9xX-lf-wqt" secondAttribute="trailing" id="DDm-S1-9wQ"/>
-                            <constraint firstItem="kTK-He-8TT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="H1C-7G-pme"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kTK-He-8TT" secondAttribute="trailing" constant="16" id="IPc-bp-wf5"/>
-                            <constraint firstItem="kTK-He-8TT" firstAttribute="top" secondItem="amq-vp-FUA" secondAttribute="bottom" constant="16" id="W1E-Fb-TV3"/>
-                            <constraint firstItem="9xX-lf-wqt" firstAttribute="top" secondItem="kTK-He-8TT" secondAttribute="bottom" constant="24" id="XPs-Ym-Vc2"/>
                             <constraint firstItem="rBa-5J-FCv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="ZZz-Xh-KD1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9xX-lf-wqt" secondAttribute="bottom" id="Zv6-i4-RBj"/>
                             <constraint firstItem="rBa-5J-FCv" firstAttribute="height" secondItem="amq-vp-FUA" secondAttribute="height" id="fnT-fu-qyU"/>
@@ -118,8 +116,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEj-ai-VlO">
-                                <rect key="frame" x="186" y="464.5" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEj-ai-VlO">
+                                <rect key="frame" x="166.5" y="108" width="81" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RCR-tB-Zeb"/>
                                 </constraints>
@@ -127,12 +125,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfM-Ih-Joa">
+                                <rect key="frame" x="255.5" y="101.5" width="50" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="classifyCuisine:" destination="km9-aR-cZw" eventType="touchUpInside" id="fxO-6u-lmV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ypm-Xn-Sd7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nEj-ai-VlO" firstAttribute="centerY" secondItem="ypm-Xn-Sd7" secondAttribute="centerY" id="3U4-lS-FBC"/>
+                            <constraint firstItem="lfM-Ih-Joa" firstAttribute="centerY" secondItem="nEj-ai-VlO" secondAttribute="centerY" id="MnS-rI-fmD"/>
+                            <constraint firstItem="ypm-Xn-Sd7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lfM-Ih-Joa" secondAttribute="trailing" constant="16" id="i1T-Du-it2"/>
                             <constraint firstItem="nEj-ai-VlO" firstAttribute="centerX" secondItem="ypm-Xn-Sd7" secondAttribute="centerX" id="ig0-FJ-8oX"/>
+                            <constraint firstItem="nEj-ai-VlO" firstAttribute="top" secondItem="ypm-Xn-Sd7" secondAttribute="top" constant="16" id="mJb-e5-Qpy"/>
+                            <constraint firstItem="lfM-Ih-Joa" firstAttribute="leading" secondItem="nEj-ai-VlO" secondAttribute="trailing" constant="8" id="wPf-Ok-Z6O"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nlb-rv-gwB"/>
@@ -150,7 +159,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lRS-l4-YFI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Dz-Vf-Ka9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -164,7 +173,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
