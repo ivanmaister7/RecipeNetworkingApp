@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var searchDishBar: UISearchBar!
-    @IBOutlet weak var searchDishTable: UITableView!
+    @IBOutlet private weak var searchDishBar: UISearchBar!
+    @IBOutlet private weak var searchDishTable: UITableView!
     
     var searchText = ""
     var count = 2
@@ -89,13 +89,30 @@ class ViewController: UIViewController {
         searchDishesRequest()
     }
     
-    @IBAction func guessButtonTap(_ sender: Any) {
-        // move to guess nutrition view controller
-    }
+    
 }
 
 
-extension ViewController: UITableViewDataSource, UISearchBarDelegate{
+extension ViewController: UITableViewDataSource, UISearchBarDelegate, UIPopoverPresentationControllerDelegate, SearchCellDelegate {
+    func guessNutrition(_ sender: Any) {
+        let button = sender as? UIButton
+        
+        
+        let popoverContentController = self.storyboard?.instantiateViewController(withIdentifier: "DishNutritionController") as? DishNutritionViewController
+        popoverContentController?.modalPresentationStyle = .popover
+
+        
+        if let popoverPresentationController = popoverContentController?.popoverPresentationController {
+           popoverPresentationController.permittedArrowDirections = .up
+            popoverPresentationController.sourceView = button
+           
+           popoverPresentationController.delegate = self
+           if let popoverController = popoverContentController {
+               present(popoverController, animated: true)
+           }
+        }
+    }
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchText = searchText
@@ -107,10 +124,17 @@ extension ViewController: UITableViewDataSource, UISearchBarDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_id", for: indexPath) as! SearchCell
+        cell.delegate = self
         let data = searchDishesResult[indexPath.row]
         cell.confView(for: data)
         return cell
     }
 
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        .none
+    }
+    
+    
+    
 }
 

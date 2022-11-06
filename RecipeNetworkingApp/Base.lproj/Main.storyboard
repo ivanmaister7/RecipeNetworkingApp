@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecipeNetworkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="RecipeNetworkingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,13 +43,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdO-wj-Ww8">
-                                                    <rect key="frame" x="163.5" y="19" width="87.5" height="39"/>
+                                                    <rect key="frame" x="163.5" y="19" width="87" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrT-4y-5xw">
-                                                    <rect key="frame" x="259" y="21.5" width="50" height="34"/>
+                                                    <rect key="frame" x="258.5" y="21.5" width="50" height="34"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
                                                     <connections>
@@ -76,6 +76,7 @@
                                         <connections>
                                             <outlet property="dishImage" destination="r6C-Sx-Ijc" id="N3S-3P-tKA"/>
                                             <outlet property="dishNameLabel" destination="AdO-wj-Ww8" id="BVF-UZ-uoZ"/>
+                                            <outlet property="guessNutritionButton" destination="yrT-4y-5xw" id="BI9-KX-LAa"/>
                                             <segue destination="km9-aR-cZw" kind="show" identifier="" id="r1y-HO-hXy"/>
                                         </connections>
                                     </tableViewCell>
@@ -107,6 +108,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="69.642857142857139"/>
+        </scene>
+        <!--Dish Nutrition View Controller-->
+        <scene sceneID="95y-a5-x18">
+            <objects>
+                <viewController storyboardIdentifier="DishNutritionController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="id1-Fj-fod" customClass="DishNutritionViewController" customModule="RecipeNetworkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UkR-Ir-Pi6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aqc-I1-2SO">
+                                <rect key="frame" x="32" y="64" width="350" height="782"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish Nutrition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-Aj-7lF">
+                                        <rect key="frame" x="75.5" y="16" width="199.5" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-TA-4NL">
+                                        <rect key="frame" x="32" y="89" width="286" height="115"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories unit" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-1r-SWj" userLabel="Calories">
+                                                <rect key="frame" x="0.0" y="0.0" width="286" height="26.5"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFC-QT-gey">
+                                                <rect key="frame" x="0.0" y="29.5" width="286" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYI-Qu-jvr">
+                                                <rect key="frame" x="0.0" y="59" width="286" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDi-Yd-Z7r">
+                                                <rect key="frame" x="0.0" y="88.5" width="286" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vC5-TA-4NL" firstAttribute="top" secondItem="z2d-Aj-7lF" secondAttribute="bottom" constant="32" id="ELf-Ww-ua6"/>
+                                    <constraint firstItem="vC5-TA-4NL" firstAttribute="leading" secondItem="Aqc-I1-2SO" secondAttribute="leading" constant="32" id="KSo-Ks-h6E"/>
+                                    <constraint firstAttribute="trailing" secondItem="vC5-TA-4NL" secondAttribute="trailing" constant="32" id="gxh-WS-ls1"/>
+                                    <constraint firstItem="z2d-Aj-7lF" firstAttribute="centerX" secondItem="Aqc-I1-2SO" secondAttribute="centerX" id="uYp-Ph-dxt"/>
+                                    <constraint firstItem="z2d-Aj-7lF" firstAttribute="top" secondItem="Aqc-I1-2SO" secondAttribute="top" constant="16" id="uZ7-Xa-iIY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OAQ-pq-l6I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Aqc-I1-2SO" firstAttribute="top" secondItem="OAQ-pq-l6I" secondAttribute="top" constant="16" id="47l-wt-mrZ"/>
+                            <constraint firstItem="OAQ-pq-l6I" firstAttribute="trailing" secondItem="Aqc-I1-2SO" secondAttribute="trailing" constant="32" id="8UP-fO-XjG"/>
+                            <constraint firstItem="Aqc-I1-2SO" firstAttribute="centerX" secondItem="OAQ-pq-l6I" secondAttribute="centerX" id="p0U-EJ-S0Y"/>
+                            <constraint firstItem="Aqc-I1-2SO" firstAttribute="leading" secondItem="OAQ-pq-l6I" secondAttribute="leading" constant="32" id="rgt-vO-XwD"/>
+                            <constraint firstItem="Aqc-I1-2SO" firstAttribute="centerY" secondItem="OAQ-pq-l6I" secondAttribute="centerY" id="v2V-59-5xf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KA0-Uf-tc0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="800"/>
+        </scene>
+        <!--Classifying Cuisine View Controller-->
+        <scene sceneID="Ndg-PK-rUW">
+            <objects>
+                <viewController storyboardIdentifier="ClassifyingCuisineViewController" id="Lwt-bQ-ZVe" customClass="ClassifyingCuisineViewController" customModule="RecipeNetworkingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LI1-CN-gSl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiX-K0-g4r">
+                                <rect key="frame" x="167" y="64" width="80" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P2t-QD-P6b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JiX-K0-g4r" firstAttribute="top" secondItem="P2t-QD-P6b" secondAttribute="top" constant="16" id="RqI-by-pDN"/>
+                            <constraint firstItem="JiX-K0-g4r" firstAttribute="centerX" secondItem="P2t-QD-P6b" secondAttribute="centerX" id="kZS-I4-qAb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="classifiedCuisineLabel" destination="JiX-K0-g4r" id="hLu-PT-ETr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5nG-sA-D1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784" y="800"/>
         </scene>
         <!--Dish Details View Controller-->
         <scene sceneID="kED-rh-v9i">
@@ -146,6 +250,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nlb-rv-gwB"/>
                     <connections>
+                        <outlet property="classifyCuisineButton" destination="lfM-Ih-Joa" id="1rz-6u-XuQ"/>
                         <outlet property="testlabel" destination="nEj-ai-VlO" id="LOW-ck-csF"/>
                     </connections>
                 </viewController>

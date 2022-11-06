@@ -7,14 +7,16 @@
 
 import Foundation
 
-struct DishNutrition: Codable {
+struct NutritionResults: Codable {
     
-    let calories: NutritionValue
-    let fat: NutritionValue
-    let protein: NutritionValue
-    let carbs: NutritionValue
+    let calories: Nutrition
+    let fat: Nutrition
+    let protein: Nutrition
+    let carbs: Nutrition
     
-    struct NutritionValue: Codable {
+    
+    
+    struct Nutrition: Codable {
         var value: Int
         var unit: String
     }
