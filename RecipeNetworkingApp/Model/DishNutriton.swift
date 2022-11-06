@@ -14,7 +14,9 @@ struct NutritionResults: Codable {
     let protein: Nutrition
     let carbs: Nutrition
     
-    
+    func guessNutrition(of title: String)  {
+        
+    }
     
     struct Nutrition: Codable {
         var value: Int
