@@ -9,29 +9,18 @@ import UIKit
 
 class ClassifyingCuisineViewController: UIViewController {
 
-    
-    var ingredientList = ""
-    var dishTitle = ""
-    
-
-    
     @IBOutlet weak var classifiedCuisineLabel: UILabel!
+    
+    var cuisine = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         classifiedCuisineLabel.adjustsFontSizeToFitWidth = true
-        getCuisine()
-    }
-    
-    func getCuisine() {
-        Task {
-            if let nameOf = await ClassifyCuisineResults().classifyCuisine(of: dishTitle, by: ingredientList) {
-                DispatchQueue.main.async {
-                    self.classifiedCuisineLabel.text = nameOf.cuisine + " cuisine"
-                }
-            }
+        DispatchQueue.main.async {
+            self.classifiedCuisineLabel.text = self.cuisine
         }
     }
+    
     
 }
 

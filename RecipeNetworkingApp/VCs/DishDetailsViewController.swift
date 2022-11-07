@@ -22,11 +22,9 @@ class DishDetailsViewController: UIViewController {
         if let popoverPresentationController = popoverContentController?.popoverPresentationController {
             popoverPresentationController.permittedArrowDirections = .up
             popoverPresentationController.sourceView = self.classifyCuisineButton
-            
             popoverPresentationController.delegate = self
             if let popoverController = popoverContentController {
-                popoverController.dishTitle = "Pork roast with green beans"
-                popoverController.ingredientList = "3 oz pork shoulder"
+                popoverController.cuisine = self.cuisine
                 popoverController.preferredContentSize = CGSize(width: self.view.frame.width/1.5, height: self.view.frame.width/5)
                 present(popoverController, animated: true)
             }
@@ -37,6 +35,10 @@ class DishDetailsViewController: UIViewController {
     var currentDish = DishSearch(id: 376941,
                                  image: "https://spoonacular.com/recipeImages/376941-312x231.jpeg",
                                  title: "Pasta Rosa")
+    var cuisine = ""
+    var dishTitle = ""
+    var ingredientList = ""
+    
     
     
     // MARK: - Lifecycle
@@ -44,6 +46,22 @@ class DishDetailsViewController: UIViewController {
         super.viewDidLoad()
         classifyCuisineButton.setTitle("", for: .normal)
         testlabel.text = "id: \(currentDish.id)"
+        // here put currentDish title and ingredientList
+        dishTitle = "Pork roast with green beans"
+        ingredientList = "3 oz pork shoulder"
+        getCuisine()
+    }
+    
+    func getCuisine() {
+        Task {
+            if let nameOf = await ClassifyCuisineResults().classifyCuisine(of: dishTitle, by: ingredientList) {
+                DispatchQueue.main.async {
+                    print(self.dishTitle)
+                    print(self.ingredientList)
+                    self.cuisine = nameOf.cuisine + " cuisine"
+                }
+            }
+        }
     }
     
 }

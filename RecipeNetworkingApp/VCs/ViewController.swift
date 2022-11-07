@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         if let indexPath = searchDishTable.indexPathForSelectedRow{
             let selectedRow = indexPath.row
             let dishDetails = segue.destination as! DishDetailsViewController
+            
             dishDetails.currentDish = self.searchDishesResult[selectedRow]
         }
     }
@@ -102,9 +103,9 @@ extension ViewController: UITableViewDataSource, UISearchBarDelegate, UIPopoverP
         if let popoverPresentationController = popoverContentController?.popoverPresentationController {
            popoverPresentationController.permittedArrowDirections = .up
             popoverPresentationController.sourceView = button
-           
            popoverPresentationController.delegate = self
            if let popoverController = popoverContentController {
+               
                present(popoverController, animated: true)
            }
         }
