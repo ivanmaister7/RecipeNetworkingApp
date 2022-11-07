@@ -24,13 +24,13 @@ class ClassifyingCuisineViewController: UIViewController {
     }
     
     func getCuisine() {
-        Task {
-            if let nameOf = await ClassifyCuisineResults().classifyCuisine(of: dishTitle, by: ingredientList) {
-                DispatchQueue.main.async {
-                    self.classifiedCuisineLabel.text = nameOf.cuisine + " cuisine"
-                }
-            }
-        }
+//        Task {
+//            if let nameOf = await ClassifyCuisineResults().classifyCuisine(of: dishTitle, by: ingredientList) {
+//                DispatchQueue.main.async {
+//                    self.classifiedCuisineLabel.text = nameOf.cuisine + " cuisine"
+//                }
+//            }
+//        }
     }
     
 }
