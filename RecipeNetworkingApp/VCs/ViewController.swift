@@ -96,12 +96,9 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UISearchBarDelegate, UIPopoverPresentationControllerDelegate, SearchCellDelegate {
     func guessNutrition(_ sender: Any) {
         let button = sender as? UIButton
-        
-        
         let popoverContentController = self.storyboard?.instantiateViewController(withIdentifier: "DishNutritionController") as? DishNutritionViewController
         popoverContentController?.modalPresentationStyle = .popover
 
-        
         if let popoverPresentationController = popoverContentController?.popoverPresentationController {
            popoverPresentationController.permittedArrowDirections = .up
             popoverPresentationController.sourceView = button

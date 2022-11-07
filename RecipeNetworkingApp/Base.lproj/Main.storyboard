@@ -127,41 +127,95 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-TA-4NL">
-                                        <rect key="frame" x="32" y="89" width="286" height="115"/>
+                                        <rect key="frame" x="16" y="73" width="318" height="115"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories unit" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-1r-SWj" userLabel="Calories">
-                                                <rect key="frame" x="0.0" y="0.0" width="286" height="26.5"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFC-QT-gey">
-                                                <rect key="frame" x="0.0" y="29.5" width="286" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYI-Qu-jvr">
-                                                <rect key="frame" x="0.0" y="59" width="286" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDi-Yd-Z7r">
-                                                <rect key="frame" x="0.0" y="88.5" width="286" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPu-cU-Zbg">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="26.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" verticalHuggingPriority="251" text="Calories" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUc-1r-SWj" userLabel="Calories">
+                                                        <rect key="frame" x="0.0" y="0.0" width="271.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="units" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duk-ZU-bY3">
+                                                        <rect key="frame" x="271.5" y="0.0" width="46.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Duk-ZU-bY3" secondAttribute="trailing" id="RSk-q7-oFu"/>
+                                                    <constraint firstItem="Duk-ZU-bY3" firstAttribute="leading" secondItem="dUc-1r-SWj" secondAttribute="trailing" id="ZJz-60-StW"/>
+                                                    <constraint firstItem="dUc-1r-SWj" firstAttribute="leading" secondItem="wPu-cU-Zbg" secondAttribute="leading" id="Zzl-DO-Iok"/>
+                                                    <constraint firstItem="dUc-1r-SWj" firstAttribute="leading" secondItem="wPu-cU-Zbg" secondAttribute="leading" id="sIS-ui-PvZ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Afj-XH-fkG">
+                                                <rect key="frame" x="0.0" y="29.5" width="318" height="26.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" verticalHuggingPriority="251" text="Fat" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbl-DO-NoR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="271.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="units" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjD-0u-OTb">
+                                                        <rect key="frame" x="271.5" y="0.0" width="46.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wd-W1-K8N">
+                                                <rect key="frame" x="0.0" y="59" width="318" height="26.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yc-bT-Ui1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="26.5"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="units" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZZ-Ou-hry">
+                                                        <rect key="frame" x="67" y="0.0" width="251" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-5x-KoW">
+                                                <rect key="frame" x="0.0" y="88.5" width="318" height="26.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J30-GX-ZcP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="26.5"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="units" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q75-vr-cTK">
+                                                        <rect key="frame" x="57" y="0.0" width="261" height="26.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="q75-vr-cTK" firstAttribute="leading" secondItem="J30-GX-ZcP" secondAttribute="trailing" id="Qle-cU-n4Z"/>
+                                                    <constraint firstAttribute="trailing" secondItem="q75-vr-cTK" secondAttribute="trailing" id="VUu-5N-dOa"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="vC5-TA-4NL" firstAttribute="top" secondItem="z2d-Aj-7lF" secondAttribute="bottom" constant="32" id="ELf-Ww-ua6"/>
-                                    <constraint firstItem="vC5-TA-4NL" firstAttribute="leading" secondItem="Aqc-I1-2SO" secondAttribute="leading" constant="32" id="KSo-Ks-h6E"/>
-                                    <constraint firstAttribute="trailing" secondItem="vC5-TA-4NL" secondAttribute="trailing" constant="32" id="gxh-WS-ls1"/>
+                                    <constraint firstItem="vC5-TA-4NL" firstAttribute="top" secondItem="z2d-Aj-7lF" secondAttribute="bottom" constant="16" id="ELf-Ww-ua6"/>
+                                    <constraint firstItem="vC5-TA-4NL" firstAttribute="leading" secondItem="Aqc-I1-2SO" secondAttribute="leading" constant="16" id="KSo-Ks-h6E"/>
+                                    <constraint firstAttribute="trailing" secondItem="vC5-TA-4NL" secondAttribute="trailing" constant="16" id="gxh-WS-ls1"/>
                                     <constraint firstItem="z2d-Aj-7lF" firstAttribute="centerX" secondItem="Aqc-I1-2SO" secondAttribute="centerX" id="uYp-Ph-dxt"/>
                                     <constraint firstItem="z2d-Aj-7lF" firstAttribute="top" secondItem="Aqc-I1-2SO" secondAttribute="top" constant="16" id="uZ7-Xa-iIY"/>
                                 </constraints>
@@ -177,6 +231,12 @@
                             <constraint firstItem="Aqc-I1-2SO" firstAttribute="centerY" secondItem="OAQ-pq-l6I" secondAttribute="centerY" id="v2V-59-5xf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="caloriesUnits" destination="Duk-ZU-bY3" id="jDI-pY-ddg"/>
+                        <outlet property="carbsUnits" destination="q75-vr-cTK" id="ciQ-AJ-FPO"/>
+                        <outlet property="fatUnits" destination="ZjD-0u-OTb" id="rNj-ef-3ug"/>
+                        <outlet property="proteinUnits" destination="dZZ-Ou-hry" id="zTi-jK-0PO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA0-Uf-tc0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

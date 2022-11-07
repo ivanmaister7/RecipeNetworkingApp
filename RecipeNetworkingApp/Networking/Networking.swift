@@ -66,20 +66,26 @@ final class Network<T: Endpoint> {
         
         throw NetworkError.badHostString
     }
+    
     private func append(url: URL?, queryItems: [URLQueryItem]) -> URL{
-        var urlComps = URLComponents(string: url?.path ?? "")!
+        var urlComps = URLComponents(string: url?.absoluteString ?? "")!
         urlComps.queryItems = queryItems
         return urlComps.url!
     }
     
     private func makeRequest(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible?) -> URLRequest {
         
+        
+        
         var request = URLRequest(url: host.appendingPathComponent(endpoint.pathComponent))
+        
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
         
         if method == .get {
+            print(request)
             request.url = append(url: request.url, queryItems: parameters?.queryItems ?? [])
+            print(request)
         } else if method == .post {
             request.httpBody = parameters?.data
         }
@@ -97,6 +103,12 @@ final class Network<T: Endpoint> {
                 completion(.data(data))
             }
         }.resume()
+    }
+    
+    func perform(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible? = nil) async throws -> Data {
+        let request = makeRequest(method, endpoint, parameters)
+        let (data, _) = try await session.data(for: request)
+        return data
     }
     
 }
