@@ -9,6 +9,6 @@ import Foundation
 
 struct SearchResponce: Codable {
     let number: Int
-    let totelResults: Int
+    let totalResults: Int
     let results: [DishSearch]
 }
