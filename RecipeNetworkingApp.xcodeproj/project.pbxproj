@@ -7,37 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF73C2C329152BFD00F0B7A1 /* AlamoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73C2C229152BFD00F0B7A1 /* AlamoNetworking.swift */; };
-		AF73C2C529152C3400F0B7A1 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73C2C429152C3400F0B7A1 /* Networking.swift */; };
-		AF73C2C729152C6700F0B7A1 /* SearchResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73C2C629152C6700F0B7A1 /* SearchResponce.swift */; };
-		AF73C2C92915301100F0B7A1 /* DishDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73C2C82915301100F0B7A1 /* DishDetailsViewController.swift */; };
-		AF7B797329140584006A4F55 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B797229140584006A4F55 /* SearchCell.swift */; };
-		AF7B79752914093F006A4F55 /* DishSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B79742914093F006A4F55 /* DishSearch.swift */; };
-		AFE910FA2913B0F0007EDE81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910F92913B0F0007EDE81 /* AppDelegate.swift */; };
-		AFE910FC2913B0F0007EDE81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */; };
-		AFE910FE2913B0F0007EDE81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910FD2913B0F0007EDE81 /* ViewController.swift */; };
-		AFE911012913B0F0007EDE81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE910FF2913B0F0007EDE81 /* Main.storyboard */; };
-		AFE911032913B0F4007EDE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE911022913B0F4007EDE81 /* Assets.xcassets */; };
-		AFE911062913B0F4007EDE81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE911042913B0F4007EDE81 /* LaunchScreen.storyboard */; };
+		AFA65523291941A4004EF693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910F92913B0F0007EDE81 /* AppDelegate.swift */; };
+		AFA65524291941AB004EF693 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */; };
+		AFA655252919422A004EF693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA98C432919291E0083D838 /* Assets.xcassets */; };
+		AFA655262919422A004EF693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA98C442919291E0083D838 /* LaunchScreen.storyboard */; };
+		AFA655272919422A004EF693 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA98C462919291E0083D838 /* Main.storyboard */; };
+		AFA98C582919291E0083D838 /* AlamoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C3F2919291E0083D838 /* AlamoNetworking.swift */; };
+		AFA98C592919291E0083D838 /* EndpointsInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C402919291E0083D838 /* EndpointsInstructions.swift */; };
+		AFA98C5A2919291E0083D838 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C412919291E0083D838 /* Networking.swift */; };
+		AFA98C5F2919291E0083D838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C492919291E0083D838 /* ViewController.swift */; };
+		AFA98C602919291E0083D838 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C4A2919291E0083D838 /* SearchCell.swift */; };
+		AFA98C612919291E0083D838 /* ClassifyingCuisineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C4B2919291E0083D838 /* ClassifyingCuisineViewController.swift */; };
+		AFA98C622919291E0083D838 /* DishDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C4C2919291E0083D838 /* DishDetailsViewController.swift */; };
+		AFA98C632919291E0083D838 /* DishNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C4D2919291E0083D838 /* DishNutritionViewController.swift */; };
+		AFA98C642919291E0083D838 /* ClassifyCuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C4F2919291E0083D838 /* ClassifyCuisine.swift */; };
+		AFA98C652919291E0083D838 /* DishNutriton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C502919291E0083D838 /* DishNutriton.swift */; };
+		AFA98C672919291E0083D838 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C522919291E0083D838 /* Const.swift */; };
+		AFA98C6E291929CF0083D838 /* DishSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C6C291929CF0083D838 /* DishSearch.swift */; };
+		AFA98C6F291929CF0083D838 /* SearchResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C6D291929CF0083D838 /* SearchResponce.swift */; };
 		EEEEE453B1407CE8938B9220 /* Pods_RecipeNetworkingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD00922C7C68686C24C20A24 /* Pods_RecipeNetworkingApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA71F76905D77A119B0BA029 /* Pods-RecipeNetworkingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeNetworkingApp.release.xcconfig"; path = "Target Support Files/Pods-RecipeNetworkingApp/Pods-RecipeNetworkingApp.release.xcconfig"; sourceTree = "<group>"; };
-		AF73C2C229152BFD00F0B7A1 /* AlamoNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoNetworking.swift; sourceTree = "<group>"; };
-		AF73C2C429152C3400F0B7A1 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		AF73C2C629152C6700F0B7A1 /* SearchResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponce.swift; sourceTree = "<group>"; };
-		AF73C2C82915301100F0B7A1 /* DishDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailsViewController.swift; sourceTree = "<group>"; };
-		AF7B797229140584006A4F55 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
-		AF7B79742914093F006A4F55 /* DishSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishSearch.swift; sourceTree = "<group>"; };
+		AFA98C3F2919291E0083D838 /* AlamoNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoNetworking.swift; sourceTree = "<group>"; };
+		AFA98C402919291E0083D838 /* EndpointsInstructions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsInstructions.swift; sourceTree = "<group>"; };
+		AFA98C412919291E0083D838 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AFA98C432919291E0083D838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFA98C452919291E0083D838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AFA98C472919291E0083D838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AFA98C492919291E0083D838 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AFA98C4A2919291E0083D838 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		AFA98C4B2919291E0083D838 /* ClassifyingCuisineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyingCuisineViewController.swift; sourceTree = "<group>"; };
+		AFA98C4C2919291E0083D838 /* DishDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishDetailsViewController.swift; sourceTree = "<group>"; };
+		AFA98C4D2919291E0083D838 /* DishNutritionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishNutritionViewController.swift; sourceTree = "<group>"; };
+		AFA98C4F2919291E0083D838 /* ClassifyCuisine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassifyCuisine.swift; sourceTree = "<group>"; };
+		AFA98C502919291E0083D838 /* DishNutriton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishNutriton.swift; sourceTree = "<group>"; };
+		AFA98C522919291E0083D838 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		AFA98C552919291E0083D838 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFA98C6C291929CF0083D838 /* DishSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishSearch.swift; path = RecipeNetworkingApp/DishSearch.swift; sourceTree = SOURCE_ROOT; };
+		AFA98C6D291929CF0083D838 /* SearchResponce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResponce.swift; path = RecipeNetworkingApp/SearchResponce.swift; sourceTree = SOURCE_ROOT; };
 		AFE910F62913B0F0007EDE81 /* RecipeNetworkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeNetworkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE910F92913B0F0007EDE81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AFE910FD2913B0F0007EDE81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AFE911002913B0F0007EDE81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AFE911022913B0F4007EDE81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AFE911052913B0F4007EDE81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AFE911072913B0F4007EDE81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD00922C7C68686C24C20A24 /* Pods_RecipeNetworkingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeNetworkingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D986DBDE4C518729E17FA866 /* Pods-RecipeNetworkingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeNetworkingApp.debug.xcconfig"; path = "Target Support Files/Pods-RecipeNetworkingApp/Pods-RecipeNetworkingApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,20 +74,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AF73C2BD29152B5300F0B7A1 /* Networking */ = {
+		AFA98C3E2919291E0083D838 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				AF73C2C229152BFD00F0B7A1 /* AlamoNetworking.swift */,
-				AF73C2C429152C3400F0B7A1 /* Networking.swift */,
+				AFA98C3F2919291E0083D838 /* AlamoNetworking.swift */,
+				AFA98C402919291E0083D838 /* EndpointsInstructions.swift */,
+				AFA98C412919291E0083D838 /* Networking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		AF73C2C029152B6400F0B7A1 /* Model */ = {
+		AFA98C482919291E0083D838 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				AF7B79742914093F006A4F55 /* DishSearch.swift */,
-				AF73C2C629152C6700F0B7A1 /* SearchResponce.swift */,
+				AFA98C492919291E0083D838 /* ViewController.swift */,
+				AFA98C4A2919291E0083D838 /* SearchCell.swift */,
+				AFA98C4B2919291E0083D838 /* ClassifyingCuisineViewController.swift */,
+				AFA98C4C2919291E0083D838 /* DishDetailsViewController.swift */,
+				AFA98C4D2919291E0083D838 /* DishNutritionViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		AFA98C4E2919291E0083D838 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFA98C6C291929CF0083D838 /* DishSearch.swift */,
+				AFA98C6D291929CF0083D838 /* SearchResponce.swift */,
+				AFA98C4F2919291E0083D838 /* ClassifyCuisine.swift */,
+				AFA98C502919291E0083D838 /* DishNutriton.swift */,
+				AFA98C522919291E0083D838 /* Const.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,17 +129,15 @@
 		AFE910F82913B0F0007EDE81 /* RecipeNetworkingApp */ = {
 			isa = PBXGroup;
 			children = (
-				AF73C2C029152B6400F0B7A1 /* Model */,
-				AF73C2BD29152B5300F0B7A1 /* Networking */,
+				AFA98C4E2919291E0083D838 /* Model */,
 				AFE910F92913B0F0007EDE81 /* AppDelegate.swift */,
 				AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */,
-				AFE910FD2913B0F0007EDE81 /* ViewController.swift */,
-				AFE910FF2913B0F0007EDE81 /* Main.storyboard */,
-				AFE911022913B0F4007EDE81 /* Assets.xcassets */,
-				AFE911042913B0F4007EDE81 /* LaunchScreen.storyboard */,
-				AFE911072913B0F4007EDE81 /* Info.plist */,
-				AF7B797229140584006A4F55 /* SearchCell.swift */,
-				AF73C2C82915301100F0B7A1 /* DishDetailsViewController.swift */,
+				AFA98C3E2919291E0083D838 /* Networking */,
+				AFA98C432919291E0083D838 /* Assets.xcassets */,
+				AFA98C442919291E0083D838 /* LaunchScreen.storyboard */,
+				AFA98C462919291E0083D838 /* Main.storyboard */,
+				AFA98C482919291E0083D838 /* VCs */,
+				AFA98C552919291E0083D838 /* Info.plist */,
 			);
 			path = RecipeNetworkingApp;
 			sourceTree = "<group>";
@@ -184,9 +210,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFE911062913B0F4007EDE81 /* LaunchScreen.storyboard in Resources */,
-				AFE911032913B0F4007EDE81 /* Assets.xcassets in Resources */,
-				AFE911012913B0F0007EDE81 /* Main.storyboard in Resources */,
+				AFA655252919422A004EF693 /* Assets.xcassets in Resources */,
+				AFA655262919422A004EF693 /* LaunchScreen.storyboard in Resources */,
+				AFA655272919422A004EF693 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,35 +265,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFE910FE2913B0F0007EDE81 /* ViewController.swift in Sources */,
-				AF73C2C92915301100F0B7A1 /* DishDetailsViewController.swift in Sources */,
-				AF7B797329140584006A4F55 /* SearchCell.swift in Sources */,
-				AF7B79752914093F006A4F55 /* DishSearch.swift in Sources */,
-				AFE910FA2913B0F0007EDE81 /* AppDelegate.swift in Sources */,
-				AF73C2C729152C6700F0B7A1 /* SearchResponce.swift in Sources */,
-				AF73C2C329152BFD00F0B7A1 /* AlamoNetworking.swift in Sources */,
-				AFE910FC2913B0F0007EDE81 /* SceneDelegate.swift in Sources */,
-				AF73C2C529152C3400F0B7A1 /* Networking.swift in Sources */,
+				AFA65524291941AB004EF693 /* SceneDelegate.swift in Sources */,
+				AFA65523291941A4004EF693 /* AppDelegate.swift in Sources */,
+				AFA98C5F2919291E0083D838 /* ViewController.swift in Sources */,
+				AFA98C622919291E0083D838 /* DishDetailsViewController.swift in Sources */,
+				AFA98C602919291E0083D838 /* SearchCell.swift in Sources */,
+				AFA98C6E291929CF0083D838 /* DishSearch.swift in Sources */,
+				AFA98C582919291E0083D838 /* AlamoNetworking.swift in Sources */,
+				AFA98C672919291E0083D838 /* Const.swift in Sources */,
+				AFA98C6F291929CF0083D838 /* SearchResponce.swift in Sources */,
+				AFA98C5A2919291E0083D838 /* Networking.swift in Sources */,
+				AFA98C592919291E0083D838 /* EndpointsInstructions.swift in Sources */,
+				AFA98C652919291E0083D838 /* DishNutriton.swift in Sources */,
+				AFA98C642919291E0083D838 /* ClassifyCuisine.swift in Sources */,
+				AFA98C632919291E0083D838 /* DishNutritionViewController.swift in Sources */,
+				AFA98C612919291E0083D838 /* ClassifyingCuisineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AFE910FF2913B0F0007EDE81 /* Main.storyboard */ = {
+		AFA98C442919291E0083D838 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AFE911002913B0F0007EDE81 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AFE911042913B0F4007EDE81 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AFE911052913B0F4007EDE81 /* Base */,
+				AFA98C452919291E0083D838 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AFA98C462919291E0083D838 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFA98C472919291E0083D838 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
