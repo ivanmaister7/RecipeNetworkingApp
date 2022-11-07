@@ -9,6 +9,8 @@ import UIKit
 
 class ClassifyingCuisineViewController: UIViewController {
 
+    
+    var ingredientList = ""
     var dishTitle = ""
     
 
@@ -17,7 +19,18 @@ class ClassifyingCuisineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        classifiedCuisineLabel.text = dishTitle
+        classifiedCuisineLabel.adjustsFontSizeToFitWidth = true
+        getCuisine()
+    }
+    
+    func getCuisine() {
+        Task {
+            if let nameOf = await ClassifyCuisineResults().classifyCuisine(of: dishTitle, by: ingredientList) {
+                DispatchQueue.main.async {
+                    self.classifiedCuisineLabel.text = nameOf.cuisine + " cuisine"
+                }
+            }
+        }
     }
     
 }

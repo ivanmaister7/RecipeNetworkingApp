@@ -25,7 +25,8 @@ class DishDetailsViewController: UIViewController {
             
             popoverPresentationController.delegate = self
             if let popoverController = popoverContentController {
-                popoverController.dishTitle = self.currentDish.title
+                popoverController.dishTitle = "Pork roast with green beans"
+                popoverController.ingredientList = "3 oz pork shoulder"
                 popoverController.preferredContentSize = CGSize(width: self.view.frame.width/1.5, height: self.view.frame.width/5)
                 present(popoverController, animated: true)
             }

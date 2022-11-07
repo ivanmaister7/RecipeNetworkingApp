@@ -250,9 +250,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiX-K0-g4r">
-                                <rect key="frame" x="167" y="64" width="80" height="41"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiX-K0-g4r">
+                                <rect key="frame" x="174" y="64" width="66.5" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -260,8 +260,10 @@
                         <viewLayoutGuide key="safeArea" id="P2t-QD-P6b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JiX-K0-g4r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P2t-QD-P6b" secondAttribute="leading" constant="16" id="QZl-LO-eRD"/>
                             <constraint firstItem="JiX-K0-g4r" firstAttribute="top" secondItem="P2t-QD-P6b" secondAttribute="top" constant="16" id="RqI-by-pDN"/>
                             <constraint firstItem="JiX-K0-g4r" firstAttribute="centerX" secondItem="P2t-QD-P6b" secondAttribute="centerX" id="kZS-I4-qAb"/>
+                            <constraint firstItem="P2t-QD-P6b" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JiX-K0-g4r" secondAttribute="trailing" constant="16" id="l8M-Bj-hQf"/>
                         </constraints>
                     </view>
                     <connections>

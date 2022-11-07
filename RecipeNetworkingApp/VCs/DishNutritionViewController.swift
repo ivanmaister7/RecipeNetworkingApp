@@ -24,7 +24,7 @@ class DishNutritionViewController: UIViewController {
     
     func getNutritions() {
         Task {
-            if let nutritions = await NutritionResults().guessNutrition(of: dishTitle) {
+            if let nutritions = await DishNutritionResults().guessNutrition(of: dishTitle) {
                 DispatchQueue.main.async {
                     self.caloriesUnits.text = "\(nutritions.calories.value)  "
                     print(nutritions.fat)
