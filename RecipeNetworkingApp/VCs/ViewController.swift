@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var searchDishTable: UITableView!
     
     var searchText = ""
+    var currentDishTitle = ""
     
     var networkService: AlamoNetworking<RecipesEndpoint>? = nil
     
@@ -92,6 +93,10 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UISearchBarDelegate, UIPopoverPresentationControllerDelegate, SearchCellDelegate {
     func guessNutrition(_ sender: Any) {
+        
+    }
+    
+    func guessNutrition(_ sender: Any, of title: String) {
         let button = sender as? UIButton
         let popoverContentController = self.storyboard?.instantiateViewController(withIdentifier: "DishNutritionController") as? DishNutritionViewController
         popoverContentController?.modalPresentationStyle = .popover
@@ -101,7 +106,7 @@ extension ViewController: UITableViewDataSource, UISearchBarDelegate, UIPopoverP
             popoverPresentationController.sourceView = button
            popoverPresentationController.delegate = self
            if let popoverController = popoverContentController {
-               
+               popoverController.dishTitle = title
                present(popoverController, animated: true)
            }
         }
@@ -119,7 +124,9 @@ extension ViewController: UITableViewDataSource, UISearchBarDelegate, UIPopoverP
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_id", for: indexPath) as! SearchCell
         cell.delegate = self
+        
         let data = searchDishesResult[indexPath.row]
+        
         cell.confView(for: data)
         return cell
     }

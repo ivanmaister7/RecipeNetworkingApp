@@ -20,7 +20,7 @@ class SearchCell: UITableViewCell, UIPopoverPresentationControllerDelegate {
     
     // MARK: - IBActions
     @IBAction func guessNutritionByDishName(_ sender: Any) {
-        delegate?.guessNutrition(sender)
+        delegate?.guessNutrition(sender, of: dishNameLabel.text ?? "")
     }
     
     func confView(for dish: DishSearch ) {
@@ -32,6 +32,6 @@ class SearchCell: UITableViewCell, UIPopoverPresentationControllerDelegate {
 }
 
 protocol SearchCellDelegate: AnyObject {
-    func guessNutrition(_ sender: Any)
+    func guessNutrition(_ sender: Any, of title: String)
 }
 

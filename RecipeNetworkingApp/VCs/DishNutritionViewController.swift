@@ -9,7 +9,7 @@ import UIKit
 
 class DishNutritionViewController: UIViewController {
 
-    var dishTitle = "Pasta Rosa"
+    var dishTitle = ""
     
     @IBOutlet private weak var caloriesUnits: UILabel!
     @IBOutlet private weak var fatUnits: UILabel!
