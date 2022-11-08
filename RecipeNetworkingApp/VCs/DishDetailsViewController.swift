@@ -35,12 +35,12 @@ class DishDetailsViewController: UIViewController {
         titleLabel.text = currentDishDetails.title
         imageLabel.sd_setImage(with: URL(string: currentDishDetails.image), completed: nil)
         dishInfoLabel.text = proccesingText(text: currentDishDetails.summary)
-        cookingTimeLabel.text = "\(currentDishDetails.cookingMinutes) min"
+        cookingTimeLabel.text = "\(currentDishDetails.readyInMinutes) min"
         let ingredients = currentDishDetails.extendedIngredients.reduce("") {
-            $0 + "* \($1.original)\n"
+            $0 + "🔪 \(proccesingText(text: $1.original))\n"
         }
         ingredientsLabel.text = ingredients
-        instructionLabel.text = proccesingText(text: currentDishDetails.instructions)
+        instructionLabel.text = proccesingText(text: currentDishDetails.instructions ?? "Put all ingredients and mix it :)")
         // here put currentDish title and ingredientList
         dishTitle = currentDishDetails.title
         ingredientList = currentDishDetails.extendedIngredients.first?.original ?? "3 oz pork shoulder"
@@ -56,6 +56,8 @@ class DishDetailsViewController: UIViewController {
             }
         }
         return dishInfoLabelText
+            .replacingOccurrences(of: "<b>", with: " ")
+            .replacingOccurrences(of: "</b>", with: " ")
     }
     
     func getCuisine() {

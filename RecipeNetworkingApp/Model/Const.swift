@@ -20,7 +20,7 @@ struct Const {
                                          image: "https://spoonacular.com/recipeImages/376941-312x231.jpeg",
                                          title: "Pasta Rosa",
                                          summary: "...",
-                                         cookingMinutes: 15,
+                                         readyInMinutes: 15,
                                          instructions: "...",
                                          extendedIngredients: [Ingredient(
                                                                 id:12147,

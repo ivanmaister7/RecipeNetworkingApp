@@ -37,6 +37,9 @@ class ViewController: UIViewController {
             let dishDetails = segue.destination as! DishDetailsViewController
             
             dishDetails.currentDish = self.searchDishesResult[selectedRow]
+            print("searchDishesResult : \(searchDishesResult.count)")
+            print("searchDishesDetails : \(searchDishesDetails.count)")
+            print(self.searchDishesResult[selectedRow].id)
             let details = self.searchDishesDetails.first(){
                 $0.id == self.searchDishesResult[selectedRow].id
             }

@@ -12,7 +12,7 @@ struct DishDetails: Codable {
     let image: String
     let title: String
     let summary: String
-    let cookingMinutes: Int
-    let instructions: String
+    let readyInMinutes: Int
+    let instructions: String?
     let extendedIngredients: [Ingredient]
 }
