@@ -42,6 +42,14 @@ struct RecipeSearch: NetworkRequestBodyConvertible {
     
 }
 
+struct RecipeInfoSearch: NetworkRequestBodyConvertible {
+    
+    var data: Data? { nil }
+    var queryItems: [URLQueryItem]? { nil }
+    var parameters: [String : Any]? { nil }
+    
+}
+
 struct GuessNutritionInstruction: NetworkRequestBodyConvertible {
     var title: String
     

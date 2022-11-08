@@ -52,6 +52,7 @@ class ViewController: UIViewController {
             let dishDetails = segue.destination as! DishDetailsViewController
             
             dishDetails.currentDish = self.searchDishesResult[selectedRow]
+            
         }
     }
         
@@ -62,9 +63,7 @@ class ViewController: UIViewController {
                 switch result {
                 case .data(let data):
                   guard let data = data,
-                        let searchDishesResult = try? JSONDecoder().decode(SearchResponce.self, from: data) else {
-                    return
-                  }
+                        let searchDishesResult = try? JSONDecoder().decode(SearchResponce.self, from: data) else { return }
                   DispatchQueue.main.async {
                     self.searchDishesResult = searchDishesResult.results
                     self.searchDishTable.reloadData()
@@ -73,7 +72,6 @@ class ViewController: UIViewController {
                     break
                 }
             }
-        
     }
 
     @IBAction func searchButtonTap(_ sender: Any) {

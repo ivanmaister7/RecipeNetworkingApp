@@ -37,6 +37,21 @@ class AlamoNetworking<T: Endpoint> {
             }
     }
     
+    func perform(_ method: HTTPMethod, _ endpoint: T, _ endpointID: Int, _ parameters: NetworkRequestBodyConvertible, completion: @escaping (Result) -> ()) {
+        let endpointPath = RecipesEndpoint.information.rawValue.replacingOccurrences(of: "ID", with: "\(endpointID)")
+        AF.request(composeRequest(host + "/\(endpointPath)", parameters),
+                   method: method,
+                   parameters: parameters.parameters,
+                   headers: HTTPHeaders(headers))
+            .response { response in
+                if let error = response.error {
+                    completion(.error(error))
+                } else {
+                    completion(.data(response.data))
+                }
+            }
+    }
+    
     private func composeRequest(_ host: String,
                                 _ parameters: NetworkRequestBodyConvertible) -> String {
         var urlComps = URLComponents(string: host)!

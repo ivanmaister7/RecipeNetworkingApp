@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF250E05291A85DC00114055 /* DishDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF250E04291A85DC00114055 /* DishDetails.swift */; };
 		AFA65523291941A4004EF693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910F92913B0F0007EDE81 /* AppDelegate.swift */; };
 		AFA65524291941AB004EF693 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */; };
 		AFA655252919422A004EF693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA98C432919291E0083D838 /* Assets.xcassets */; };
@@ -25,11 +26,13 @@
 		AFA98C672919291E0083D838 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C522919291E0083D838 /* Const.swift */; };
 		AFA98C6E291929CF0083D838 /* DishSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C6C291929CF0083D838 /* DishSearch.swift */; };
 		AFA98C6F291929CF0083D838 /* SearchResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA98C6D291929CF0083D838 /* SearchResponce.swift */; };
+		AFC33778291A8AA20008BF5B /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC33777291A8AA20008BF5B /* Ingredient.swift */; };
 		EEEEE453B1407CE8938B9220 /* Pods_RecipeNetworkingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD00922C7C68686C24C20A24 /* Pods_RecipeNetworkingApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA71F76905D77A119B0BA029 /* Pods-RecipeNetworkingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeNetworkingApp.release.xcconfig"; path = "Target Support Files/Pods-RecipeNetworkingApp/Pods-RecipeNetworkingApp.release.xcconfig"; sourceTree = "<group>"; };
+		AF250E04291A85DC00114055 /* DishDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetails.swift; sourceTree = "<group>"; };
 		AFA98C3F2919291E0083D838 /* AlamoNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamoNetworking.swift; sourceTree = "<group>"; };
 		AFA98C402919291E0083D838 /* EndpointsInstructions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsInstructions.swift; sourceTree = "<group>"; };
 		AFA98C412919291E0083D838 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		AFA98C552919291E0083D838 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA98C6C291929CF0083D838 /* DishSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishSearch.swift; path = RecipeNetworkingApp/DishSearch.swift; sourceTree = SOURCE_ROOT; };
 		AFA98C6D291929CF0083D838 /* SearchResponce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResponce.swift; path = RecipeNetworkingApp/SearchResponce.swift; sourceTree = SOURCE_ROOT; };
+		AFC33777291A8AA20008BF5B /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		AFE910F62913B0F0007EDE81 /* RecipeNetworkingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeNetworkingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE910F92913B0F0007EDE81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFE910FB2913B0F0007EDE81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				AFA98C4F2919291E0083D838 /* ClassifyCuisine.swift */,
 				AFA98C502919291E0083D838 /* DishNutriton.swift */,
 				AFA98C522919291E0083D838 /* Const.swift */,
+				AF250E04291A85DC00114055 /* DishDetails.swift */,
+				AFC33777291A8AA20008BF5B /* Ingredient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,10 +277,12 @@
 				AFA98C622919291E0083D838 /* DishDetailsViewController.swift in Sources */,
 				AFA98C602919291E0083D838 /* SearchCell.swift in Sources */,
 				AFA98C6E291929CF0083D838 /* DishSearch.swift in Sources */,
+				AFC33778291A8AA20008BF5B /* Ingredient.swift in Sources */,
 				AFA98C582919291E0083D838 /* AlamoNetworking.swift in Sources */,
 				AFA98C672919291E0083D838 /* Const.swift in Sources */,
 				AFA98C6F291929CF0083D838 /* SearchResponce.swift in Sources */,
 				AFA98C5A2919291E0083D838 /* Networking.swift in Sources */,
+				AF250E05291A85DC00114055 /* DishDetails.swift in Sources */,
 				AFA98C592919291E0083D838 /* EndpointsInstructions.swift in Sources */,
 				AFA98C652919291E0083D838 /* DishNutriton.swift in Sources */,
 				AFA98C642919291E0083D838 /* ClassifyCuisine.swift in Sources */,

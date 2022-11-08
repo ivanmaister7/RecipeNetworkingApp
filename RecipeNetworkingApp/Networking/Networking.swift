@@ -17,12 +17,26 @@ enum RecipesEndpoint: String, Endpoint {
     
     case analyzer = "recipes/analyzeInstructions"
     case search = "recipes/complexSearch"
-    case information = "recipes/479101/information"
+    case information = "recipes/ID/information"
     case guess = "recipes/guessNutrition"
     case classify = "recipes/cuisine"
     
     var pathComponent: String {
         rawValue
+    }
+    
+}
+
+struct RecipeInfoEndpoint: Endpoint {
+    
+    let id: Int
+    
+    init(id: Int) {
+        self.id = id
+    }
+    
+    var pathComponent: String {
+        "recipes/\(self.id)/information"
     }
     
 }
