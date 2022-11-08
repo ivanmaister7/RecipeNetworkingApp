@@ -44,7 +44,7 @@ class DishDetailsViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        classifyCuisineButton.setTitle("", for: .normal)
+        //classifyCuisineButton.setTitle("Clasiffy", for: .normal)
         testlabel.text = "id: \(currentDish.id)"
         // here put currentDish title and ingredientList
         dishTitle = "Pork roast with green beans"

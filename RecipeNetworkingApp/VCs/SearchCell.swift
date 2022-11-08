@@ -24,7 +24,7 @@ class SearchCell: UITableViewCell, UIPopoverPresentationControllerDelegate {
     }
     
     func confView(for dish: DishSearch ) {
-        self.guessNutritionButton.setTitle("", for: .normal)
+        //self.guessNutritionButton.setTitle("Nutrition", for: .normal)
         self.dishImage.sd_setImage(with: URL(string: dish.image), completed: nil)
         //self.dishImage.image = UIImage(named: "default")
         self.dishNameLabel.text = dish.title
