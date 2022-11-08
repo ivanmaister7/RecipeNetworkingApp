@@ -14,15 +14,10 @@ class ViewController: UIViewController {
     
     var searchText = ""
     
-    let headers = [
-        "content-type": "application/x-www-form-urlencoded",
-        "X-RapidAPI-Key": "c16730d1cfmshb29acd971c9d77bp10617djsn47827102600d",
-        "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-    ]
-    
     var networkService: AlamoNetworking<RecipesEndpoint>? = nil
     
     var searchDishesResult: [DishSearch] = []
+    var searchDishesDetails: [DishDetails] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +27,7 @@ class ViewController: UIViewController {
         
         searchDishTable.keyboardDismissMode = .onDrag
         
-        networkService = AlamoNetworking<RecipesEndpoint>("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", headers: headers)
-        
-//        networkService.perform(.post, .analyzer, RecipeAnalyzeInstruction("Fried potatoe with chicken, onions and cheese")) { result in
-//            switch result {
-//            case .data(let data):
-//                print("RESULT")
-//                print(try! JSONSerialization.jsonObject(with: data!))
-//            case .error(_):
-//                print("ERROR")
-//                break
-//            }
-//        }
+        networkService = AlamoNetworking<RecipesEndpoint>("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", headers: Const.headers)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,7 +36,12 @@ class ViewController: UIViewController {
             let dishDetails = segue.destination as! DishDetailsViewController
             
             dishDetails.currentDish = self.searchDishesResult[selectedRow]
-            
+            let details = self.searchDishesDetails.first(){
+                $0.id == self.searchDishesResult[selectedRow].id
+            }
+            if let details = details {
+                dishDetails.currentDishDetails = details
+            }
         }
     }
         
@@ -67,6 +56,25 @@ class ViewController: UIViewController {
                   DispatchQueue.main.async {
                     self.searchDishesResult = searchDishesResult.results
                     self.searchDishTable.reloadData()
+                    self.searchDishesResult.forEach(){
+                        self.getDishesDetails(id: $0.id)
+                    }
+                  }
+                case .error(_):
+                    break
+                }
+            }
+    }
+    
+    func getDishesDetails(id: Int) {
+        networkService!.perform(.get, .information, id,
+                                   RecipeInfoSearch()) { result in
+                switch result {
+                case .data(let data):
+                  guard let data = data,
+                        let searchDishInfoResult = try? JSONDecoder().decode(DishDetails.self, from: data) else { return }
+                  DispatchQueue.main.async {
+                    self.searchDishesDetails.append(searchDishInfoResult)
                   }
                 case .error(_):
                     break
