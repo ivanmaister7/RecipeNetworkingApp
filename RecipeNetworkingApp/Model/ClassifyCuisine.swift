@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ClassifyCuisineResults: Decodable {
+struct ClassifyCuisineResults: Codable {
     
-    var cuisine = ""
+    var cuisine: String
     
 //    func classifyCuisine(of title: String, by ingredientList: String) async -> ClassifyCuisineResults? {
 //        

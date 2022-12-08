@@ -9,10 +9,10 @@ import Foundation
 
 struct DishNutritionResults: Codable {
     
-    var calories = Nutrition()
-    var fat = Nutrition()
-    var protein = Nutrition()
-    var carbs = Nutrition()
+    var calories: Nutrition
+    var fat: Nutrition
+    var protein: Nutrition
+    var carbs: Nutrition
     
 //    func guessNutrition(of title: String) async -> DishNutritionResults? {
 //        do {
@@ -32,8 +32,8 @@ struct DishNutritionResults: Codable {
 //    }
     
     struct Nutrition: Codable {
-        var value: Int = 0
-        var unit: String = ""
+        var value: Int
+        var unit: String
     }
     
 }

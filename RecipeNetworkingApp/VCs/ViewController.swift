@@ -50,7 +50,8 @@ class ViewController: UIViewController {
     }
         
     func searchDishesRequest() {
-            networkService!.perform(.get, .search,
+        guard let networkService = networkService else { return }
+            networkService.perform(.get, .search,
                                    RecipeSearch([URLQueryItem(name: "query",
                                                               value: searchText)])) { result in
                 switch result {
@@ -71,7 +72,8 @@ class ViewController: UIViewController {
     }
     
     func getDishesDetails(id: Int) {
-        networkService!.perform(.get, .information, id,
+        guard let networkService = networkService else { return }
+        networkService.perform(.get, .information, id,
                                    RecipeInfoSearch()) { result in
                 switch result {
                 case .data(let data):
@@ -137,8 +139,4 @@ extension ViewController: UITableViewDataSource, UISearchBarDelegate, UIPopoverP
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         .none
     }
-    
-    
-    
 }
-
