@@ -61,15 +61,15 @@ class DishDetailsViewController: UIViewController {
     }
     
     func getCuisine() {
-//        Task {
-//            if let nameOf = await ClassifyCuisineResults().classifyCuisine(of: dishTitle, by: ingredientList) {
-//                DispatchQueue.main.async {
-//                    print(self.dishTitle)
-//                    print(self.ingredientList)
-//                    self.cuisine = nameOf.cuisine + " cuisine"
-//                }
-//            }
-//        }
+        Task {
+            if let nameOf = await ClassifyCuisineResults.classifyCuisine(of: dishTitle, by: ingredientList) {
+                DispatchQueue.main.async {
+                    print(self.dishTitle)
+                    print(self.ingredientList)
+                    self.cuisine = nameOf.cuisine + " cuisine"
+                }
+            }
+        }
     }
     
     

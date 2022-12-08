@@ -115,11 +115,11 @@ final class Network<T: Endpoint> {
         }.resume()
     }
     
-//    func perform(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible? = nil) async throws -> Data {
-//        let request = makeRequest(method, endpoint, parameters)
-//        let (data, _) = try await session.data(for: request)
-//        return data
-//    }
+    func perform(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible? = nil) async throws -> Data {
+        let request = makeRequest(method, endpoint, parameters)
+        let (data, _) = try await session.data(for: request)
+        return data
+    }
     
 }
 

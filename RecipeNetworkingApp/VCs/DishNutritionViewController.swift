@@ -23,18 +23,19 @@ class DishNutritionViewController: UIViewController {
     }
     
     func getNutritions() {
-//        Task {
-//            if let nutritions = await DishNutritionResults().guessNutrition(of: dishTitle) {
-//                DispatchQueue.main.async {
-//                    self.caloriesUnits.text = "\(nutritions.calories.value)  "
-//                    print(nutritions.fat)
-//                    self.fatUnits.text = "\(nutritions.fat.value) \(nutritions.fat.unit)"
-//                    self.proteinUnits.text = "\(nutritions.protein.value) \(nutritions.protein.unit)"
-//                    self.carbsUnits.text = "\(nutritions.carbs.value) \(nutritions.carbs.unit)"
-//                }
-//                
-//            } 
-//        }
+        Task {
+            if let nutritions = await DishNutritionResults.guessNutrition(of: dishTitle) {
+                DispatchQueue.main.async {
+                    
+                    self.caloriesUnits.text = "\(nutritions.calories?.value ?? 0) \(nutritions.calories?.unit ?? "no data")"
+
+                    self.fatUnits.text = "\(nutritions.fat?.value ?? 0) \(nutritions.fat?.unit ?? "no data")"
+                    self.proteinUnits.text = "\(nutritions.protein?.value ?? 0) \(nutritions.protein?.unit ?? "no data")"
+                    self.carbsUnits.text = "\(nutritions.carbs?.value ?? 0) \(nutritions.carbs?.unit ?? "no data")"
+                }
+                
+            }
+        }
     }
 
 }
